@@ -3,6 +3,17 @@ class Cat():
         self.breed = breed
         self.age = age
 
+    @staticmethod
+    def miau():
+        return "Miau!"
+
+    @classmethod
+    def type(cls):
+        if cls.__name__ == 'Cat':
+            return "To jest jakiś kot"
+        else:
+            return cls.__name__
+
     def cat_age(self):
         return self.age
 
@@ -11,3 +22,12 @@ class Cat():
 
     def __repr__(self):
         return "{breed}, {age}".format(breed=self.breed, age=self.age)
+
+
+kot1 = Cat("domowy", 4)
+print(kot1)
+print(kot1.breed)
+print(kot1.age)
+# print(Cat.miau())
+# print(Cat.miau)
+print(kot1.miau())
