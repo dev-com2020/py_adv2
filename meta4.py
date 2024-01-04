@@ -13,7 +13,7 @@ class InstanceCountingClass:
 
 
 if __name__ == '__main__':
-    instances = [InstanceCountingClass() for _ in range(5)]
+    instances = [InstanceCountingClass() for _ in range(4)]
     for i in instances:
         print(i)
     print(f"W sumie: {InstanceCountingClass.created}")
