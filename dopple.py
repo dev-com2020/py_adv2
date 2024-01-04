@@ -1,0 +1,3 @@
+class DoppleDict(dict):
+    pass
+
