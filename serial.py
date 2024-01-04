@@ -24,3 +24,8 @@ obj.a_dict = None
 my_unpickled_object = pickle.loads(my_pickled_obj)
 print(f"To jest obiekt pickle - odzysk: {my_unpickled_object.a_dict}")
 
+import dill
+
+square = lambda x: x * x
+my_pickle_lambda = dill.dumps(square)
+print(my_pickle_lambda)
