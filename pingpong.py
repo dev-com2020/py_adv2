@@ -25,9 +25,17 @@ class D(B, C):
         super().pong()
         C.pong(self)
 
+
 print(D.mro())
 d = D()
 d.pong()
 d.ping()
 C.pong(d)
 
+
+def print_mro(cls):
+    print(', '.join(c.__name__ for c in cls.__mro__))
+
+print_mro(C)
+print_mro(bool)
+print_mro(A)
