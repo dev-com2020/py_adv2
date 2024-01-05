@@ -24,5 +24,7 @@ def main():
     no_slots = [NoSlots(i) for i in range(25000)]
     return slots, no_slots
 
+
 if __name__ == '__main__':
     main()
+
