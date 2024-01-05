@@ -1,25 +1,20 @@
 import logging.handlers
+from py_adv3.config.config_log1 import logger
 
-logger = logging.getLogger("my_logger")
-logger.setLevel(logging.DEBUG)
-logging.basicConfig()
-formatter = logging.Formatter(
-    fmt=(
-        "%(asctime)s | %(levelname)s | "
-        "%(name)s | %(filename)s:%(lineno)d | "
-        "%(message)s"
-    )
-)
-handler = logging.handlers.TimedRotatingFileHandler(
-        filename='../app.log',
-        when="D",
-        backupCount=30,
-        encoding="UTF-8"
-    )
+data = 0
 
-handler.setFormatter(formatter)
-logger.addHandler(handler)
+logging.basicConfig(filename=f'{data}_plik.log')
 
+def change_log(new_file):
+    logger = logging.getLogger()
+    for handler in logger.handlers[:]:
+        logger.removeHandler(handler)
+    file_handler = logging.FileHandler(new_file)
+    formatter = logging.Formatter("%(name)s")
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+
+change_log('new_log.log')
 logger.log(logging.CRITICAL, "Komunikat o błędzie krytycznym")
 logger.error("Komunikat o błędzie")
 logger.warning("Komunikat ostrzegawczy")
