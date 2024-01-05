@@ -1,5 +1,3 @@
-import itertools
-
 from line_profiler import profile
 
 
@@ -19,6 +17,7 @@ def primes():
         n += 1
 
 if __name__ == '__main__':
+    import itertools
     total = 0
     n = 2000
     for prime in itertools.islice(primes(), n):
