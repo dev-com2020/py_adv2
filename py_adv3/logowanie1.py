@@ -5,7 +5,7 @@ logger.setLevel(logging.DEBUG)
 logging.basicConfig()
 logger.addHandler(
     logging.handlers.TimedRotatingFileHandler(
-        filename='app.log',
+        filename='../app.log',
         when="D",
         backupCount=30,
     )
