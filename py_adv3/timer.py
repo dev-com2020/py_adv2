@@ -16,6 +16,12 @@ def test_app():
     return x
 
 
+def test_insert():
+    x = []
+    for i in range(10000):
+        x.insert(0, i)
+
+
 def benchmark(function, number=100, repeat=10):
     times = timeit.repeat(function, number=number, globals=globals())
     time = min(times) / number
@@ -26,3 +32,4 @@ if __name__ == '__main__':
     benchmark('test_list()')
     benchmark('test_list_compreh()')
     benchmark('test_app()')
+    benchmark('test_insert()')
