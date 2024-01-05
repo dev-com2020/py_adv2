@@ -1,6 +1,6 @@
 import collections
-import tracemalloc
 import gc
+import weakref
 
 class Spam(object):
     index = 0
@@ -26,8 +26,10 @@ if __name__ == '__main__':
     for i in range(n):
         a = Eggs()
         b = Eggs()
-        a.b = b
-        b.a = a
+        a.b = weakref.ref(b)
+        b.a = weakref.ref(a)
+        # b.a = a
+        # del b
 
     Spam.cache = {}
     Eggs.eggs = []
