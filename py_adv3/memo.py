@@ -5,8 +5,8 @@ import memory_profiler
 def main():
     n = 100000
     a = [i for i in range(n)]
-    b = [i for i in range(n)]
     c = list(range(n))
+    b = [i for i in range(n)]
     d = list(range(n))
     e = dict.fromkeys(a, b)
     f = dict.fromkeys(c, d)
