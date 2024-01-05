@@ -16,7 +16,7 @@ def square(n):
 
     :param n (int): Numer podnoszony do kwadratu
     :return: int jako rezultat
-    '''
+     '''
     return n ** 2
 
 
